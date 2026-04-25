@@ -3,127 +3,44 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gege Portfolio</title>
-    <style>
-      :root {
-        --bg: #f4efe6;
-        --ink: #2f2a25;
-        --accent: #5d7a4f;
-        --card: #fffaf1;
-      }
-
-      * { box-sizing: border-box; }
-
-      body {
-        margin: 0;
-        min-height: 100vh;
-        font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
-        color: var(--ink);
-        background:
-          radial-gradient(circle at 12% 18%, #d9e8cd 0%, transparent 24%),
-          radial-gradient(circle at 86% 0%, #f6d8b8 0%, transparent 28%),
-          var(--bg);
-        display: grid;
-        place-items: center;
-        padding: 24px;
-      }
-
-      main {
-        width: min(820px, 100%);
-        background: var(--card);
-        border: 1px solid #e8dbc9;
-        border-radius: 16px;
-        padding: 42px 28px;
-        box-shadow: 0 10px 28px rgba(55, 42, 25, 0.08);
-      }
-
-      h1 {
-        margin: 0 0 8px;
-        font-size: clamp(30px, 5vw, 44px);
-        line-height: 1.1;
-      }
-
-      p {
-        margin: 0;
-        line-height: 1.75;
-      }
-
-      .lead {
-        margin-top: 12px;
-        color: #514940;
-      }
-
-      .status {
-        margin-top: 22px;
-        display: inline-block;
-        background: #edf5e8;
-        border: 1px solid #cfe0c4;
-        color: #2f5a2c;
-        padding: 7px 12px;
-        border-radius: 999px;
-        font-size: 14px;
-      }
-
-      .grid {
-        margin-top: 26px;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 12px;
-      }
-
-      .card {
-        border: 1px dashed #d8c6ad;
-        border-radius: 12px;
-        padding: 14px;
-        background: #fff;
-      }
-
-      .card strong {
-        display: block;
-        margin-bottom: 6px;
-      }
-
-      .footer {
-        margin-top: 24px;
-        font-size: 14px;
-        color: #6d6359;
-      }
-
-      a {
-        color: var(--accent);
-        text-decoration: none;
-      }
-    </style>
+    <title>Qiyue Xiang | Explore My World</title>
+    <meta name="description" content="Qiyue Xiang personal portfolio entry page" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/site.css" />
   </head>
-  <body>
-    <main>
-      <h1>Gege Portfolio</h1>
-      <p>产品经理求职作品集（建设中）</p>
-      <p class="lead">
-        这里会陆续上线我的核心项目：农民画色彩交互、旅游网站黄金路径改造、ASD 感统训练游戏展示。
-      </p>
+  <body class="page-intro">
+    <header class="topbar topbar--light">
+      <a class="brand" href="home.html">Qiyue Xiang</a>
+      <nav class="main-nav" aria-label="Main">
+        <a href="home.html#about">About</a>
+        <a href="home.html#aigc">AIGC</a>
+        <a href="home.html#vibe-coding">Vibe Coding</a>
+        <a href="home.html#design">Design</a>
+        <a href="home.html#photography">Photography</a>
+      </nav>
+    </header>
 
-      <span class="status">已上线占位首页，持续迭代中</span>
+    <main class="intro-main">
+      <img class="intro-bg" src="assets/img/intro-bg.jpg" alt="Snow view from train window" />
+      <div class="intro-mask" aria-hidden="true"></div>
 
-      <section class="grid" aria-label="即将上线项目">
-        <article class="card">
-          <strong>农民画色彩交互</strong>
-          <span>重点项目：API 生图演示</span>
-        </article>
-        <article class="card">
-          <strong>旅游网站改造</strong>
-          <span>主案例：黄金路径体验</span>
-        </article>
-        <article class="card">
-          <strong>ASD 感统训练游戏</strong>
-          <span>先视频展示，后续 Web MVP</span>
-        </article>
+      <span class="corner-dot corner-dot--tl" aria-hidden="true"></span>
+      <span class="corner-dot corner-dot--tr" aria-hidden="true"></span>
+      <span class="corner-dot corner-dot--bl" aria-hidden="true"></span>
+      <span class="corner-dot corner-dot--br" aria-hidden="true"></span>
+
+      <section class="intro-copy" aria-label="Entry">
+        <h1>EXPLORE<br />MY<br />WORLD</h1>
+        <p>点击 GO 进入作品集 / Enter Portfolio</p>
+        <a class="go-btn" href="home.html" data-go-link>
+          <span>go</span>
+          <span aria-hidden="true">→</span>
+        </a>
       </section>
-
-      <p class="footer">
-        联系方式会在下一版补充。GitHub：
-        <a href="https://github.com/gegewuuuuu" target="_blank" rel="noreferrer">@gegewuuuuu</a>
-      </p>
     </main>
+
+    <script src="assets/site.js" defer></script>
   </body>
 </html>
