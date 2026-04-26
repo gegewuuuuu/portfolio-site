@@ -1,13 +1,31 @@
 ﻿(function () {
+  const introMain = document.querySelector('[data-intro-main]');
+  const introCanvas = document.querySelector('[data-intro-canvas]');
+  if (introMain && introCanvas) {
+    const DESIGN_WIDTH = 2000;
+    const DESIGN_HEIGHT = 1125;
+
+    const syncIntroScale = () => {
+      const viewportWidth = introMain.clientWidth;
+      const viewportHeight = introMain.clientHeight;
+      const scale = Math.max(viewportWidth / DESIGN_WIDTH, viewportHeight / DESIGN_HEIGHT);
+      introCanvas.style.setProperty('--canvas-scale', String(scale));
+    };
+
+    syncIntroScale();
+    window.addEventListener('resize', syncIntroScale);
+  }
+
   const goLink = document.querySelector('[data-go-link]');
   if (goLink) {
     goLink.addEventListener('click', function (event) {
       event.preventDefault();
+      goLink.classList.add('is-pressed');
       document.body.classList.add('is-leaving');
       const target = goLink.getAttribute('href');
       window.setTimeout(function () {
         window.location.href = target;
-      }, 380);
+      }, 280);
     });
   }
 

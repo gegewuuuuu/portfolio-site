@@ -33,10 +33,9 @@ body {
 }
 
 .topbar--entry {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: rgba(223, 231, 239, 0.88);
+  position: relative;
+  background: rgba(222, 230, 239, 0.95);
+  border-bottom: 1px solid rgba(174, 182, 192, 0.55);
 }
 
 .topbar--home {
@@ -74,82 +73,76 @@ body {
   overflow: hidden;
 }
 
+.page-intro .topbar {
+  height: 70px;
+  padding: 0 52px;
+}
+
+.page-intro .brand {
+  font-size: 22px;
+}
+
+.page-intro .main-nav {
+  gap: 38px;
+}
+
+.page-intro .main-nav a {
+  font-size: 18px;
+}
+
 .intro-main {
   position: relative;
-  min-height: 100vh;
+  height: calc(100vh - 70px);
+  overflow: hidden;
+}
+
+.intro-canvas {
+  --canvas-scale: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 2000px;
+  height: 1125px;
+  transform: translate(-50%, -50%) scale(var(--canvas-scale));
+  transform-origin: center center;
 }
 
 .intro-bg {
-  position: absolute;
-  inset: 0;
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
 }
 
-.intro-dot {
+.go-btn-image {
   position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #acc8e8;
-  z-index: 3;
-}
-
-.intro-dot--lt {
-  left: 7.4%;
-  top: 24.2%;
-}
-
-.intro-dot--rt {
-  right: 7.8%;
-  top: 22.7%;
-}
-
-.intro-dot--lb {
-  left: 10.3%;
-  bottom: 17.4%;
-}
-
-.intro-dot--rb {
-  right: 6.8%;
-  bottom: 10.9%;
-}
-
-.intro-copy {
-  position: absolute;
-  right: 12.2%;
-  bottom: 10.7%;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  gap: 66px;
-}
-
-.intro-copy h1 {
-  margin: 0;
-  font-family: "Marcellus", serif;
-  font-size: 112px;
-  line-height: 0.92;
-  letter-spacing: 0.01em;
-}
-
-.go-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 16px;
-  border-radius: 999px;
-  border: 3px solid #1a1f28;
-  color: #1a1f28;
+  left: 1518px;
+  top: 900px;
+  width: 232px;
+  display: block;
+  z-index: 5;
   text-decoration: none;
-  font-family: "Marcellus", serif;
-  font-size: 76px;
-  line-height: 1;
-  padding: 14px 38px 20px;
+  transition: transform 0.18s ease, filter 0.18s ease;
+}
+
+.go-btn-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.go-btn-image:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.go-btn-image.is-pressed {
+  transform: translateY(1px) scale(0.985);
 }
 
 body.is-leaving {
-  animation: pageFadeOut 0.38s ease forwards;
+  animation: pageFadeOut 0.28s ease forwards;
 }
 
 @keyframes pageFadeOut {
@@ -455,25 +448,16 @@ body.is-leaving {
     font-size: 23px;
   }
 
-  .intro-dot {
-    width: 13px;
-    height: 13px;
+  .page-intro .brand {
+    font-size: 21px;
   }
 
-  .intro-copy {
-    right: 10.8%;
-    bottom: 9.5%;
-    gap: 34px;
+  .page-intro .main-nav {
+    gap: 30px;
   }
 
-  .intro-copy h1 {
-    font-size: clamp(58px, 6vw, 92px);
-  }
-
-  .go-btn {
-    font-size: clamp(36px, 3.1vw, 60px);
-    border-width: 2px;
-    padding: 10px 24px 12px;
+  .page-intro .main-nav a {
+    font-size: 17px;
   }
 
   .hero {
@@ -567,28 +551,26 @@ body.is-leaving {
     font-size: 18px;
   }
 
+  .page-intro .topbar {
+    height: auto;
+    padding: 12px 16px;
+  }
+
+  .page-intro .brand {
+    font-size: 28px;
+  }
+
+  .page-intro .main-nav {
+    gap: 10px 14px;
+    flex-wrap: wrap;
+  }
+
+  .page-intro .main-nav a {
+    font-size: 18px;
+  }
+
   .intro-main {
-    min-height: calc(100vh - 112px);
-  }
-
-  .intro-dot {
-    display: none;
-  }
-
-  .intro-copy {
-    right: 14px;
-    left: 14px;
-    bottom: 24px;
-    gap: 18px;
-    justify-content: space-between;
-  }
-
-  .intro-copy h1 {
-    font-size: clamp(40px, 13vw, 76px);
-  }
-
-  .go-btn {
-    font-size: clamp(30px, 9vw, 56px);
+    height: calc(100vh - 112px);
   }
 
   .hero {
